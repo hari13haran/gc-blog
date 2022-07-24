@@ -1,20 +1,24 @@
 import './App.css';
+import Navbar from './Navbar';
+import Home from './Home';
 
 function App() {
-  const title = 'Welcome to my new Blog!';
-  const likes = 50;
-  const link = "https://www.google.co.in"
+  // const title = 'App Component';
+  // const likes = 50;
+  // const link = "https://www.google.co.in"
 
   return (
     <div className="App">
+      <Navbar />
       <div className="content">
-        <h1>{ title }</h1>
+          <Home />
+        {/* <h1>{ title }</h1>
         <p>Liked { likes } times</p>
         <p>Avg: { Math.random() * likes }</p>
-        <a href={link}>Google Home page</a>
+        <a href={link}>Google Home page</a> */}
       </div>
     </div>
-  );
+  ); 
 }
 
 export default App;
