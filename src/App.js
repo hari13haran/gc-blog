@@ -11,7 +11,7 @@ function App() {
         <h1>{ title }</h1>
         <p>Liked { likes } times</p>
         <p>Avg: { Math.random() * likes }</p>
-        <a href="link">Google Home page</a>
+        <a href={link}>Google Home page</a>
       </div>
     </div>
   );
