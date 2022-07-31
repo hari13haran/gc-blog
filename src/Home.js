@@ -48,6 +48,7 @@ const Home = () => {
 
             {/* <BlogList blogs={blogs.filter((blog) => blog.author === 'mario')} title="Mario's Blogs" /> */}
 
+            {/* useEffect hook example */}
             <button onClick={() => setName('hari')}>Change Name</button>
             <p>{name}</p>
 
