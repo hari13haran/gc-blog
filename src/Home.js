@@ -1,6 +1,7 @@
-import { useState, useEffect } from "react";
+// import { useState, useEffect } from "react";
 import BlogList from "./BlogList";
-
+import useFetch from "./useFetch";
+ 
 const Home = () => {
 
     // const [name, setName] = useState('Hari');
@@ -22,11 +23,11 @@ const Home = () => {
     //     { title: 'Web dev top tips', body: 'lorem ipsum...', author: 'mario', id: 3 }
     // ]);
 
-    const [blogs, setBlogs] = useState(null);
+    // const [blogs, setBlogs] = useState(null);
 
-    const [isPending, setIsPending] = useState(true);
+    // const [isPending, setIsPending] = useState(true);
 
-    const [error, setError] = useState(null);
+    // const [error, setError] = useState(null);
 
     // const handleDelete = (id) => {
     //     const newBlogs = blogs.filter((blog) => blog.id !== id);
@@ -35,25 +36,27 @@ const Home = () => {
 
     // const [name, setName] = useState('mario');
 
-    useEffect(() => {
-        fetch('http://localhost:8000/blogs')
-        .then(res => {
-            if(!res.ok) {
-                throw Error('Could not fetch data');
-            }
-            return res.json();
-        })
-        .then(data => {
-            console.log(data);
-            setBlogs(data);
-            setIsPending(false);
-            setError(null);
-        })
-        .catch(err => {
-            setIsPending(false);
-            setError(err.message);
-        })
-    }, []);
+    // useEffect(() => {
+    //     fetch('http://localhost:8000/blogs')
+    //     .then(res => {
+    //         if(!res.ok) {
+    //             throw Error('Could not fetch data');
+    //         }
+    //         return res.json();
+    //     })
+    //     .then(data => {
+    //         console.log(data);
+    //         setBlogs(data);
+    //         setIsPending(false);
+    //         setError(null);
+    //     })
+    //     .catch(err => {
+    //         setIsPending(false);
+    //         setError(err.message);
+    //     })
+    // }, []);
+
+    const { data: blogs, isPending, error } = useFetch('http://localhost:8000/blogs');
 
     return ( 
         <div className="home">
